@@ -7,7 +7,9 @@ import { DetalleEmpleadoComponent } from './components/empleado/detalle-empleado
 import { ListarClientesComponent } from './components/cliente/listar-clientes/listar-clientes.component';
 import { ActualizarClienteComponent } from './components/cliente/actualizar-cliente/actualizar-cliente.component';
 import { ListarPedidosComponent } from './components/pedido/listar-pedidos/listar-pedidos.component';
-import { TrabajoComponent } from './components/trabajo/trabajo/trabajo.component'; 
+import { TrabajoComponent } from './components/trabajo/trabajo/trabajo.component';
+import { DetalleTrabajoComponent } from './components/trabajo/detalle-trabajo/detalle-trabajo.component'; 
+import { ActualizarTrabajoComponent } from './components/trabajo/actualizar-trabajo/actualizar-trabajo.component';
 
 //aqui se configuran las rutas URL a donde tienen que redireccionar (componentes)
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path : 'clientes', component:ListarClientesComponent},
   {path : 'actualizar-cliente/:id', component : ActualizarClienteComponent},
   {path : 'pedidos', component : ListarPedidosComponent},
-  {path : 'trabajos', component : TrabajoComponent}
+  {path : 'trabajos', component : TrabajoComponent},
+  {path : 'detalle-trabajo/:id', component : DetalleTrabajoComponent },
+  {path : 'actualizar-trabajo/:id', component :ActualizarTrabajoComponent }
 ];
 
 @NgModule({

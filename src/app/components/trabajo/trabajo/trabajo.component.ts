@@ -26,7 +26,7 @@ export class TrabajoComponent implements OnInit {
     })
   }
 
-  showActualizar(id:number){
+  actualizarTrabajo(id:number){
     this.router.navigate(['actualizar-trabajo',id]); 
   }
 

@@ -20,6 +20,10 @@ export class TrabajoService {
     return this.httpClient.get<Trabajo>(`${this.baseURL}/id/${id}`);
   }
 
+  actualizarTrabajo(id:number, trabajo:Trabajo) : Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/${id}`, trabajo);
+  }
+
   eliminarTrabajo(id:Number):Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }

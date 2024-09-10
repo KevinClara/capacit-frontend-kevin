@@ -15,6 +15,8 @@ import { ListarPedidosComponent } from './components/pedido/listar-pedidos/lista
 import { ListarCustomersComponent } from './components/customers/listar-customers/listar-customers.component';
 import { ProductoComponent } from './components/producto/producto/producto.component';
 import { TrabajoComponent } from './components/trabajo/trabajo/trabajo.component';
+import { DetalleTrabajoComponent } from './components/trabajo/detalle-trabajo/detalle-trabajo.component';
+import { ActualizarTrabajoComponent } from './components/trabajo/actualizar-trabajo/actualizar-trabajo.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TrabajoComponent } from './components/trabajo/trabajo/trabajo.component
     ListarPedidosComponent,
     ListarCustomersComponent,
     ProductoComponent,
-    TrabajoComponent
+    TrabajoComponent,
+    DetalleTrabajoComponent,
+    ActualizarTrabajoComponent
   ],
   imports: [
     BrowserModule,

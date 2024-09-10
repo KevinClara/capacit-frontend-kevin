@@ -1,0 +1,43 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Editar trabajo</h3>
+    <form (ngSubmit)="onSubmit()" #trabajoForm="ngForm">
+        <div class="form-group">
+            <label>Titulo : </label>
+            <input type="text" class="form-control" id="titulo" [(ngModel)]="trabajo.titulo" name="titulo" required minlength="4" maxlength="10" placeholder="Digite su titulo" #titulo="ngModel">
+            <div class="alert alert-danger" *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+                <div *ngIf="titulo.errors.required">
+                    Digite su titulo por favor
+                </div>
+                <div *ngIf="titulo.errors.minlength">
+                    El titulo debe contener minimo 4 caracteres
+                </div>
+                <div *ngIf="titulo.errors.maxlength">
+                    El titulo debe contener maximo 10 caracteres
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Salario minimo : </label>
+            <input type="number" class="form-control" id="salario_minimo" [(ngModel)]="trabajo.minimo" name="salario_minimo" required placeholder="Digite su salario minimo" #minimo="ngModel">
+            <div class="alert alert-danger" *ngIf="minimo.invalid && (minimo.dirty || minimo.touched)">
+                <div *ngIf="minimo.errors.required">
+                    Digite el salario minimo por favor
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Salario maximo : </label>
+            <input type="number" class="form-control" id="salario_maximo" [(ngModel)]="trabajo.maximo" name="salario_maximo" required placeholder="Digite su salario maximo" #maximo="ngModel">
+            <div class="alert alert-danger" *ngIf="maximo.invalid && (maximo.dirty || maximo.touched)">
+                <div *ngIf="maximo.errors.required">
+                    Digite el salario maximo por favor
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <button class="btn btn-success" [disabled]="!trabajoForm.form.valid">Guardar</button>
+    </form>
+</div>

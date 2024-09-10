@@ -1,0 +1,24 @@
+<br>
+<h3>Listar trabajos</h3>
+<table class="table table.stripped">
+    <thead class="table-dark">
+        <tr>
+            <th>Titulo</th>
+            <th>Sueldo minimo</th>
+            <th>Sueldo maximo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let trabajo of trabajos">
+            <td>{{trabajo.titulo}}</td>
+            <td>{{trabajo.minimo}}</td>
+            <td>{{trabajo.maximo}}</td>
+            <td>
+                <button (click)="showActualizar(trabajo.id)" class="btn btn-info">Actualizar</button>
+                <button (click)="eliminarTrabajo(trabajo.id)" class="btn btn-info" style="margin-left: 10px;">Eliminar</button>
+                <button (click)="detaellesTrabajo(trabajo.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

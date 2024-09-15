@@ -17,6 +17,7 @@ import { ProductoComponent } from './components/producto/producto/producto.compo
 import { TrabajoComponent } from './components/trabajo/trabajo/trabajo.component';
 import { DetalleTrabajoComponent } from './components/trabajo/detalle-trabajo/detalle-trabajo.component';
 import { ActualizarTrabajoComponent } from './components/trabajo/actualizar-trabajo/actualizar-trabajo.component';
+import { RegistrarTrabajoComponent } from './components/trabajo/registrar-trabajo/registrar-trabajo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ActualizarTrabajoComponent } from './components/trabajo/actualizar-trab
     ProductoComponent,
     TrabajoComponent,
     DetalleTrabajoComponent,
-    ActualizarTrabajoComponent
+    ActualizarTrabajoComponent,
+    RegistrarTrabajoComponent
   ],
   imports: [
     BrowserModule,

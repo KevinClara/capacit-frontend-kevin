@@ -1,12 +1,12 @@
 <div class="col-md-6 offset-md-3">
-    <h3 class="text-center">Actualizar trabajo</h3>
+    <h3 class="text-center">Registro de Trabajos</h3>
     <form (ngSubmit)="onSubmit()" #trabajoForm="ngForm">
         <div class="form-group">
             <label>Titulo : </label>
             <input type="text" class="form-control" id="titulo" [(ngModel)]="trabajo.titulo" name="titulo" required minlength="4" maxlength="50" placeholder="Escriba el titulo" #titulo="ngModel">
             <div class="alert alert-danger" *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
                 <div *ngIf="titulo.errors.required">
-                    Escriba titulo por favor
+                    Escriba el titulo por favor
                 </div>
                 <div *ngIf="titulo.errors.minlength">
                     El titulo debe contener minimo 4 caracteres
@@ -18,8 +18,8 @@
         </div>
         <br>
         <div class="form-group">
-            <label>Salario minimo : </label>
-            <input type="number" class="form-control" id="salario_minimo" [(ngModel)]="trabajo.minimo" name="salario_minimo" required placeholder="Digite su salario minimo" #minimo="ngModel">
+            <label>Salario minimo: </label>
+            <input type="number" class="form-control" id="minimo" [(ngModel)]="trabajo.minimo" name="minimo" required placeholder="Digite el salario minimo" #minimo="ngModel">
             <div class="alert alert-danger" *ngIf="minimo.invalid && (minimo.dirty || minimo.touched)">
                 <div *ngIf="minimo.errors.required">
                     Digite el salario minimo por favor
@@ -28,8 +28,8 @@
         </div>
         <br>
         <div class="form-group">
-            <label>Salario maximo : </label>
-            <input type="number" class="form-control" id="salario_maximo" [(ngModel)]="trabajo.maximo" name="salario_maximo" required placeholder="Digite su salario maximo" #maximo="ngModel">
+            <label>Salario maximo: </label>
+            <input type="number" class="form-control" id="maximo" [(ngModel)]="trabajo.maximo" name="maximo" required placeholder="Digite el salario maximo" #maximo="ngModel">
             <div class="alert alert-danger" *ngIf="maximo.invalid && (maximo.dirty || maximo.touched)">
                 <div *ngIf="maximo.errors.required">
                     Digite el salario maximo por favor
@@ -38,7 +38,7 @@
         </div>
         <br>
         <div class="form-group">
-            <label>Identificador del departamento : </label>
+            <label>Identificador del Departamento: </label>
             <input type="number" class="form-control" id="departamento" [(ngModel)]="trabajo.departamento" name="departamento" required placeholder="Digite el id del departamento" #departamento="ngModel">
             <div class="alert alert-danger" *ngIf="departamento.invalid && (departamento.dirty || departamento.touched)">
                 <div *ngIf="departamento.errors.required">
@@ -47,7 +47,6 @@
             </div>
         </div>
         <br>
-
         <button class="btn btn-success" [disabled]="!trabajoForm.form.valid">Guardar</button>
     </form>
 </div>

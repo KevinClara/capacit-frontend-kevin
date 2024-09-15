@@ -10,6 +10,7 @@ import { ListarPedidosComponent } from './components/pedido/listar-pedidos/lista
 import { TrabajoComponent } from './components/trabajo/trabajo/trabajo.component';
 import { DetalleTrabajoComponent } from './components/trabajo/detalle-trabajo/detalle-trabajo.component'; 
 import { ActualizarTrabajoComponent } from './components/trabajo/actualizar-trabajo/actualizar-trabajo.component';
+import { RegistrarTrabajoComponent } from './components/trabajo/registrar-trabajo/registrar-trabajo.component';
 
 //aqui se configuran las rutas URL a donde tienen que redireccionar (componentes)
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path : 'pedidos', component : ListarPedidosComponent},
   {path : 'trabajos', component : TrabajoComponent},
   {path : 'detalle-trabajo/:id', component : DetalleTrabajoComponent },
-  {path : 'actualizar-trabajo/:id', component :ActualizarTrabajoComponent }
+  {path : 'actualizar-trabajo/:id', component :ActualizarTrabajoComponent },
+  {path : 'registrar-trabajo', component: RegistrarTrabajoComponent}
 ];
 
 @NgModule({

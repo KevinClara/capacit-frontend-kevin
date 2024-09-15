@@ -28,4 +28,7 @@ export class TrabajoService {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
+  registrarTrabajo(trabajo:Trabajo):Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, trabajo);
+  }
 }

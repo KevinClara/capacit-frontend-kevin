@@ -38,14 +38,21 @@
         </div>
         <br>
         <div class="form-group">
-            <label>Identificador del Departamento: </label>
-            <input type="number" class="form-control" id="departamento" [(ngModel)]="trabajo.departamento" name="departamento" required placeholder="Digite el id del departamento" #departamento="ngModel">
-            <div class="alert alert-danger" *ngIf="departamento.invalid && (departamento.dirty || departamento.touched)">
-                <div *ngIf="departamento.errors.required">
-                    Digite el id del departamento por favor
+            <label>Selecciona el Departamento: </label>
+            <select class="form-control" 
+                    [(ngModel)]="trabajo.departamento.id" 
+                    name="departamento" 
+                    required 
+                    #departamentoSelect="ngModel">
+                <option value="" disabled>Seleccione un departamento</option>
+                <option *ngFor="let dep of departamentos" [value]="dep.id">{{ dep.departamento }}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="departamentoSelect.invalid && (departamentoSelect.dirty || departamentoSelect.touched)">
+                <div *ngIf="departamentoSelect.errors?.required">
+                    Seleccione un departamento por favor
                 </div>
             </div>
-        </div>
+        </div>        
         <br>
         <button class="btn btn-success" [disabled]="!trabajoForm.form.valid">Guardar</button>
     </form>

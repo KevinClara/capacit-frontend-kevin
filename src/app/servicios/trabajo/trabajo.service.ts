@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Trabajo } from 'src/app/models/trabajo/trabajo';
+import { Departamento, Trabajo } from 'src/app/models/trabajo/trabajo';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ import { Trabajo } from 'src/app/models/trabajo/trabajo';
 export class TrabajoService {
 
   private baseURL = 'http://localhost:8080/api/v1/trabajos';
+  private departamentosURL = 'http://localhost:8080/api/v1/departamentos';
   
   constructor(private httpClient:HttpClient){}
 
@@ -30,5 +31,9 @@ export class TrabajoService {
 
   registrarTrabajo(trabajo:Trabajo):Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`, trabajo);
+  }
+
+  obtenerDepartamentos(): Observable<Departamento[]> {
+    return this.httpClient.get<Departamento[]>(this.departamentosURL);
   }
 }

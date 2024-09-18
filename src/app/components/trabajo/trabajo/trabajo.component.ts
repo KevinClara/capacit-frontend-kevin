@@ -1,6 +1,6 @@
 import swal from 'sweetalert2';
 import { Component, OnInit } from '@angular/core';
-import { Trabajo } from '../../../models/trabajo/trabajo';
+import { Departamento, Trabajo } from '../../../models/trabajo/trabajo';
 import { TrabajoService } from 'src/app/servicios/trabajo/trabajo.service';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class TrabajoComponent implements OnInit {
 
-  trabajos : Trabajo[]; 
+  trabajos : Trabajo[];
 
   constructor(private trabajoService : TrabajoService, private router : Router) { }
 

@@ -4,6 +4,7 @@
     <thead class="table-dark">
         <tr>
             <th>Titulo</th>
+            <th>Departamento</th>
             <th>Sueldo minimo</th>
             <th>Sueldo maximo</th>
             <th>Acciones</th>
@@ -12,11 +13,12 @@
     <tbody>
         <tr *ngFor="let trabajo of trabajos">
             <td>{{trabajo.titulo}}</td>
+            <td>{{trabajo.departamento.departamento}}</td>
             <td>{{trabajo.minimo}}</td>
             <td>{{trabajo.maximo}}</td>
             <td>
                 <button (click)="actualizarTrabajo(trabajo.id)" class="btn btn-info">Actualizar</button>
-                <button (click)="eliminarTrabajo(trabajo.id)" class="btn btn-info" style="margin-left: 10px;">Eliminar</button>
+                <button (click)="eliminarTrabajo(trabajo.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
                 <button (click)="detallesTrabajo(trabajo.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
             </td>
         </tr>

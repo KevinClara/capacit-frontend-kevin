@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Trabajo } from 'src/app/models/trabajo/trabajo';
+import { Departamento, Trabajo } from 'src/app/models/trabajo/trabajo';
 import { TrabajoService } from 'src/app/servicios/trabajo/trabajo.service';
 import { Route, Router } from '@angular/router';
 
@@ -10,10 +10,30 @@ import { Route, Router } from '@angular/router';
 })
 export class RegistrarTrabajoComponent implements OnInit {
 
-  trabajo : Trabajo = new Trabajo();
+  trabajo: Trabajo = {
+    departamento: {
+      id: null,
+      departamento: '',
+      managerid: 0
+    },
+    id: 0,
+    titulo: '',
+    minimo: 0,
+    maximo: 0
+  };  
+  departamentos : Departamento[]; 
   constructor(private trabajoService: TrabajoService, private router : Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {    
+    this.cargarDepartamentos();
+  }
+
+  cargarDepartamentos() {
+    this.trabajoService.obtenerDepartamentos().subscribe(
+      departamentos => {
+        this.departamentos = departamentos;
+      },error => console.log(error));
+  }
 
   guardarTrabajo(){
     this.trabajoService.registrarTrabajo(this.trabajo).subscribe(dato=>{

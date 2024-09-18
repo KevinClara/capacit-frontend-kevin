@@ -1,26 +1,38 @@
 <br>
 <h3>Listar trabajos</h3>
-<table class="table table.stripped">
+<table class="table table-striped">
     <thead class="table-dark">
-        <tr>
+        <tr class="text-center">
             <th>Titulo</th>
             <th>Departamento</th>
-            <th>Sueldo minimo</th>
-            <th>Sueldo maximo</th>
+            <th>Sueldo mínimo</th>
+            <th>Sueldo máximo</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let trabajo of trabajos">
-            <td>{{trabajo.titulo}}</td>
-            <td>{{trabajo.departamento.departamento}}</td>
-            <td>{{trabajo.minimo}}</td>
-            <td>{{trabajo.maximo}}</td>
+        <tr *ngFor="let trabajo of paginatedTrabajos" class="text-center">
+            <td>{{ trabajo.titulo }}</td>
+            <td>{{ trabajo.departamento.departamento }}</td>
+            <td>{{ trabajo.minimo }}</td>
+            <td>{{ trabajo.maximo }}</td>
             <td>
-                <button (click)="actualizarTrabajo(trabajo.id)" class="btn btn-info">Actualizar</button>
-                <button (click)="eliminarTrabajo(trabajo.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
-                <button (click)="detallesTrabajo(trabajo.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
+                <button (click)="actualizarTrabajo(trabajo.id)" class="btn btn-warning">Actualizar</button>
+                <button (click)="eliminarTrabajo(trabajo.id)" class="btn btn-danger"
+                    style="margin-left: 10px;">Eliminar</button>
+                <button (click)="detallesTrabajo(trabajo.id)" class="btn btn-info"
+                    style="margin-left: 10px;">Detalles</button>
             </td>
         </tr>
     </tbody>
 </table>
+<br>
+
+<div class="text-center mb-5">
+    <button class="btn btn-primary btn-sm" (click)="anterior()" [disabled]="currentPage === 1">Anterior</button>
+    <button class="btn"></button>
+    <span>Página {{ currentPage }}</span>
+    <button class="btn"></button>
+    <button class="btn btn-primary btn-sm" (click)="siguiente()"
+        [disabled]="(currentPage * itemsPerPage) >= trabajos.length">Siguiente</button>
+</div>
